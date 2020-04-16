@@ -1,0 +1,72 @@
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var h = $(window).height();
+
+            $('#wrap').css('display', 'none');
+            $('#loader-bg ,#loader').height(h).css('display', 'block');
+        });
+
+        $(window).load(function() { //全ての読み込みが完了したら実行
+            $('#loader-bg').delay(900).fadeOut(800);
+            $('#loader').delay(600).fadeOut(300);
+            $('#wrap').css('display', 'block');
+        });
+
+        //10秒たったら強制的にロード画面を非表示
+        $(function() {
+            setTimeout('stopload()', 10000);
+        });
+
+        function stopload() {
+            $('#wrap').css('display', 'block');
+            $('#loader-bg').delay(900).fadeOut(800);
+            $('#loader').delay(600).fadeOut(300);
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="loader-bg">
+        <div id="loader">
+            <img src="img/Black.JPG" width=" 80" height="80" alt="Now Loading..." />
+        </div>
+    </div>
+    <div id="wrap">
+        <section class="top">
+            <center><img src="img/rogo.JPG" class="rogo"> </center>
+            <center><img src="img/moji.gif" class="moji"></center>
+        </section>
+        <section class="about">
+            <h1>About</h1>
+            <dev>
+                <img src="img/rogo.JPG" class="minirogo" class="abouttext">
+                <p>映像制作、連続投稿企画の主催を務めている中学生。<br>映像と共にプログラミングも勉強中。<br><br>
+
+                    <a href="https://twitter.com/coroke3" class="twitter">
+                        <i class="fab fa-twitter"></i></a>　
+                    <a href="https://www.youtube.com/channel/UCO7mBuPdZolV_TkirpLJirw?sub_confirmation=1" class="youtube">
+                        <i class="fab fa-youtube"></i></a>　
+                    <a href="https://github.com/coroke3" class="github">
+                        <i class="fab fa-github"></i></a>　
+                    <a href="https://unityroom.com/users/g3fpt2q5wc8savhje1i0" class="unity">
+                        <i class="fab fa-unity"></i></a>　
+
+                    <br>
+                </p>
+            </dev>
+        </section>
+        <section class="works">
+            <h1>Works</h1>
+            <p>映像作品</p>
+            <p>他にもこのような企画をしています。<br><a href="https://pvrentoo.netlify.com/">
+                    <img src="img/pvrentou.png" class="kakorogo">
+                </a></p>
+        </section>
+
+    </div>
+</body>
